@@ -25,7 +25,7 @@ const cars = [
     {
         manufacturer: 'Volkswagen',
         model: 'Golf',
-        type: 'Benzina'
+        type: 'benzina' //Cambiato B con b
     },
     {
         manufacturer: 'Fiat',
@@ -50,28 +50,28 @@ const cars = [
     {
         manufacturer: 'Ford',
         model: 'Kuga',
-        type: 'Diesel'
+        type: 'diesel'  //Cambiato D con d
     },
     {
         manufacturer: 'Seat',
         model: 'Ibiza',
         type: 'metano'
-    }
+    },                  //Aggiunto virgola
     {
         manufacturer: 'Audi',
         model: 'R8',
-        type: 'Benzina'
+        type: 'benzina'  //Cambiato B con b
     },
 ];
 
-const gasolineCars = cars.filter( (auto) >= auto.type === 'benzina');
+const gasolineCars = cars.filter( (cars) => cars.type === 'benzina'); // >= corretto con =>
 
-const dieselCars = cars.filter( (auto) => {
-    auto.type === 'diesel';
+const dieselCars = cars.filter( (cars) => {  //Cambiato auto.type con cars.type
+    return cars.type === 'diesel'; //aggiunto return
 });
 
 const otherCars = cars.filter( (auto) => {
-    return auto.type !== 'benzina' || auto.type !== 'diesel';
+    return (auto.type !== 'benzina' && auto.type !== 'diesel'); //aggiunto () e && con ||
 });
 
 console.log('Auto a benzina');

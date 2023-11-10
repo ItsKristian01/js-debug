@@ -1,24 +1,24 @@
 const input = document.querySelector('input');
-const array = null;
+const array = [];  // Null sotituito con []
 
 input.addEventListener('keypress', function(event) {
 
     if (event.code != 'Enter')    return;
-    if (input.value.length == '') return;
+    if (input.value.length == 0) return; //aggiunto valore 0
 
-    array.add(input.value);
+    array.push(input.value); // sosituito add con psuh
 
     const li = document.createElement('li');
     li.classList.add('list-group-item');
-    li.text = input.value;
-    document.querySelector('ul').push(li);
+    li.innerHTML = input.value;  //cambiato .text con .innerHTMl
+    document.querySelector('ul').append(li);  //push sostituito con append
 
-    let counter = '';
+    let counter = 0; //aggiunto valore 0
     let item    = array[0];
-    const max   = 1;
+    let max   = 1;  // cambiato const con let
     const elems = [];
 
-    for (let i = 0; i < array; i++) {
+    for (let i = 0; i < array.length; i++) { //aggiunto array.length
         let val = array[i];
 
         if (!elems[val]) {
@@ -27,19 +27,21 @@ input.addEventListener('keypress', function(event) {
             elems[val]++;
         }
 
-        for (let j = i; j < array.length; i++) {
+        for (let j = i; j < array.length; j++) { // sostituito i++ con j++
             if (array[i] == array[j]) {
                 counter++;
-                if (max < counter)
-                max  = counter;
-                item = array[i];
+                if (max < counter){   // aggiunto {} costrutto if
+                    max  = counter;
+                    item = array[i];
+                } 
+                
             }
         }
 
         counter = 0;
     }
 
-    const alert = document.getElementsByClassName('alert');
+    const alert = document.querySelector('alert');  // aggiunto queryselectro al posto di getElementsByClassName
 
     alert.classList.remove('d-none');
     alert.classList.add('d-flex');
@@ -47,5 +49,5 @@ input.addEventListener('keypress', function(event) {
     alert.querySelector('span:first-child').innerText = item;
     alert.querySelector('span:last-child').innerText = max;
 
-    console.log('${item} trovato ${max} volte');
+    console.log(`${item} trovato ${max} volte`);  // "" sostituito con backtick
 });

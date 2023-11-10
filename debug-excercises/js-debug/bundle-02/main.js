@@ -11,9 +11,8 @@
 
 
 // ESERCIZIO 1
-function checkAge() {
-    const myAge = 32;
-    let message = ''; //Cambiato const con let
+function checkAge(myAge) {
+    let message = '';  //Cambiato const con let
 
     if (myAge < 18) {
         message = `Sei troppo giovane! Hai ${myAge} anni!`;
@@ -34,33 +33,34 @@ checkAge();
 
 
 // ESERCIZIO 3
-// function addNumbers() {
-//     const userNumber = parseInt(prompt('Inserisci un numero')); //Aggiunto parseInt
-//     const total = userNumber + 12;
+ function addNumbers() {
+    const userNumber = parseInt(prompt('Inserisci un numero')); //Aggiunto parseInt
+     const total = userNumber + 12;
 
-//     console.log(`Il risultato finale è ${total}`);
-// }
-// addNumbers();
+     console.log(`Il risultato finale è ${total}`);
+     return total;
+ }
+ addNumbers();
 
 
 // ESERCIZIO 4
-// function checkAccess() {
-//     const addresses = ['mymail@mail.com', 'yourmail@mail.com', 'hermail@mail.com', 'hismail@mail.com'];
-//     const userEmail = prompt('Inserisci il tuo indirizzo email');
+ function checkAccess() {
+     const addresses = ['mymail@mail.com', 'yourmail@mail.com', 'hermail@mail.com', 'hismail@mail.com'];
+    const userEmail = prompt('Inserisci il tuo indirizzo email');
 
-//     let grantAccess = 'false';
+     let grantAccess = 'false';
 
-//     if (addresses.includes(userEmail)) {
-//         grantAccess = 'true';
-//     }
+    if (addresses.includes(userEmail)) {
+        grantAccess = true;  //Cambiato valore "" in booleano
+    }
 
-//      if (grantAccess === true) {
-//         console.log('Accesso consentito!');
-//     } else {
-//        console.log('Accesso negato!');
-//     }
-// }
-//  checkAccess();
+      if (grantAccess === true) {
+        console.log('Accesso consentito!');
+    } else {
+        console.log('Accesso negato!');
+     }
+ }
+ checkAccess();
 
 
 // ESERCIZIO 5 (suggerimento: c'è un solo errore)
@@ -69,7 +69,7 @@ checkAge();
 
      const userEmail = prompt('Inserisci il tuo indirizzo email');
 
-     let grantAccess = 'false';
+     let grantAccess = false;
 
     for (let i = 0; i < addresses.length; i++) {
         const email = addresses[i];
@@ -77,7 +77,7 @@ checkAge();
        if (userEmail.length > 5) {
 
             if (email === userEmail) {
-                grantAccess = 'true';
+                grantAccess = true;    //false e true cambiati con valori booleani
 
              }
 
